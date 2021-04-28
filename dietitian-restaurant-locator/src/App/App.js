@@ -1,49 +1,58 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import './App.css'
-
 import LandingPage from '../LandingPage/LandingPage'
+import RestaurantList from '../RestaurantList/RestaurantList'
+import AddRestaurant from '../AddRestaurant/AddRestaurant'
+import EditRestaurant from '../EditRestaurant/EditRestaurant'
 import config from '../config'
 import bento from './bento.png'
 
 class App extends Component {
-//   state = {
-//     todos: []
-//   }
+  state = {
+    restaurants: []
+  }
 
-//   //add new to do
-//   addToDo = (todo) => {
-//     this.setState({todos: [...this.state.todos, todo]}) 
-//   }
+  //add new restaurant
+  addRestaurant = (restaurant) => {
+    this.setState({restaurants: [...this.state.restaurants, restaurant]}) 
+  }
 
-//   //delete selected to do
-//   deleteToDo = (id) => {
-//     this.setState({todos: this.state.todos.filter(todo => todo.id !== id)}) 
-//   }
+  //delete selected restaurant
+  deleteRestaurant = (id) => {
+    this.setState({restaurants: this.state.restaurants.filter(restaurant => restaurant.id !== id)}) 
+  }
 
-//   //edit selected to do
-//   editToDo = (editedToDo, index) => {
-//     const targetToDo = this.state.todos
-//     targetToDo[index] = editedToDo
-//     this.setState({
-//       todos: [...targetToDo]
-//     })
-//   }
+  //edit selected restaurant
+  editRestaurant = (editedRestaurant, index) => {
+    const targetRestaurant = this.state.restaurants
+    targetRestaurant[index] = editedRestaurant
+    this.setState({
+      restaurants: [...targetRestaurant]
+    })
+  }
+  
 
-//   //getting data from database
-//   componentDidMount() {
-//         fetch(`${config.API_ENDPOINT}/api/todo`)
-//         .then((res) => {
-//             if (!res.ok) return res.json().then(e => Promise.reject(e));
-//             return res.json();
-//         })
-//         .then((todos) => {
-//             this.setState({ todos });
-//         })
-//         .catch(error => {
-//             console.error({ error });
-//         });
-// }
+  //getting data from database
+  componentDidMount() {
+    this.setState({restaurants: [
+      {theRestaurant: 'aaa', type: 'Keto', id: 1},
+      {theRestaurant: 'bbb', type: 'Mediterranean', id: 2},
+      {theRestaurant: 'ccc', type: 'Plant-based', id: 3}
+    ]})
+
+        // fetch(`${config.API_ENDPOINT}/api/restaurant`)
+        // .then((res) => {
+        //     if (!res.ok) return res.json().then(e => Promise.reject(e));
+        //     return res.json();
+        // })
+        // .then((restaurants) => {
+        //     this.setState({ restaurants });
+        // })
+        // .catch(error => {
+        //     console.error({ error });
+        // });
+}
 
   render() {
     return (
@@ -65,22 +74,22 @@ class App extends Component {
             <LandingPage />
           </Route>
 
-          {/* display all to do items, with delete button next to it */}
+          {/* display all restaurant items, with delete button next to it */}
           <Route path='/home'>
-            <Todolist todos={this.state.todos} deleteToDo={this.deleteToDo}/>
+            <RestaurantList restaurants={this.state.restaurants} deleteRestaurant={this.deleteRestaurant}/>
           </Route>
 
-          {/* add new to do */}
+          {/* add new restaurant */}
           <Route path='/add' 
             render = {props => (
-              <AddToDo addToDo={this.addToDo} {...props}/>
+              <AddRestaurant addRestaurant={this.addRestaurant} {...props}/>
             )}
           />
 
-          {/* edit selected to do */}
+          {/* edit selected restaurant */}
           <Route path='/edit/:id' 
             render = {props => (
-              <EditToDo editToDo={this.editToDo} todos={this.state.todos} {...props}/>
+              <EditRestaurant editRestaurant={this.editRestaurant} restaurants={this.state.restaurants} {...props}/>
             )}
           />
 
