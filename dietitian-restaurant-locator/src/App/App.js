@@ -5,7 +5,7 @@ import LandingPage from '../LandingPage/LandingPage'
 import RestaurantList from '../RestaurantList/RestaurantList'
 import AddRestaurant from '../AddRestaurant/AddRestaurant'
 import EditRestaurant from '../EditRestaurant/EditRestaurant'
-import config from '../config'
+// import config from '../config'
 import bento from './bento.png'
 
 class App extends Component {

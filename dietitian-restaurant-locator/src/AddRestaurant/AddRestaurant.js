@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import config from '../config';
+// import config from '../config';
 import PropTypes from 'prop-types'
 
 class AddRestaurant extends Component {
@@ -54,6 +54,7 @@ class AddRestaurant extends Component {
 }
 
   render() {
+    // eslint-disable-next-line
     let { theRestaurant, type } = this.props
 
     return (
