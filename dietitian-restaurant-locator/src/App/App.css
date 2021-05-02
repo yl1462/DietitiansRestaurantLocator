@@ -17,8 +17,8 @@ body {
 .App {
   display: flex;
   flex-direction: column;
-  width: auto;
-  min-height: 1000px;
+  width: 600px;
+  min-height: 1500px;
   background: linear-gradient(
     90deg,
     #80B918 0%,
