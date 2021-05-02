@@ -17,8 +17,8 @@ body {
 .App {
   display: flex;
   flex-direction: column;
-  width: 550px;
-  min-height: 1300px;
+  width: auto;
+  min-height: 1000px;
   background: linear-gradient(
     90deg,
     #80B918 0%,
@@ -62,9 +62,11 @@ ul li {
 }
 
 .Placeholder {
-  height: 30px;
+  height: 35px;
   width: 300px;
   text-align: center;
+  font-size: 25px;
+  text-align-last: center;
 }
 
 .restaurantName {
@@ -90,7 +92,7 @@ button {
 }
 
 footer {
-  margin: 250px 35px 0 35px;
+  margin: 100px 35px 0 35px;
   font-size: 35px
 }
 
