@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import config from '../config';
-import PropTypes from 'prop-types'
 
 class EditRestaurant extends Component {
   state = {
