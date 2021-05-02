@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditRestaurant component renders the new restaurant given props 1`] = `
+<Fragment>
+  <div
+    className="EditRestaurant"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        className="Placeholder"
+        min={3}
+        name="the_restaurant"
+        onChange={[Function]}
+        required={true}
+        type="text"
+        value=""
+      />
+      <br />
+      <select
+        name="type"
+        onChange={[Function]}
+        required={true}
+        value=""
+      >
+        <option
+          value="Keto"
+        >
+          Keto
+        </option>
+        <option
+          value="Mediterranean"
+        >
+          Mediterranean
+        </option>
+        <option
+          value="Plant-based"
+        >
+          Plant-based
+        </option>
+      </select>
+      <br />
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+    </form>
+  </div>
+</Fragment>
+`;

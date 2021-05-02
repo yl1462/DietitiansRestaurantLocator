@@ -13,8 +13,8 @@ describe('renders without crashing', () => {
       state: {
         index: 0,
         restaurant: {
-          title: "",
-          description: "",
+          the_restaurant: "",
+          type: "",
           id: 1
         }
       }
@@ -35,8 +35,8 @@ describe(`EditRestaurant component`, () => {
     state: {
       index: 0,
       restaurant: {
-        title: "",
-        description: "",
+        the_restaurant: "",
+        type: "",
         id: 1
       }
     }

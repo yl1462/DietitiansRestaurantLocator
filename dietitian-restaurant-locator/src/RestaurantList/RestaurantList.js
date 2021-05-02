@@ -4,7 +4,7 @@ import config from '../config'
 
 class RestaurantList extends Component {  
   handleDelete = (id) => {  
-  fetch(`${config.API_ENDPOINT}/api/restaurants/${id}`, {
+  fetch(`${config.API_ENDPOINT}/api/restaurant/${id}`, {
         method:'DELETE',
         headers:{
             'Content-Type':'application/json'
@@ -30,12 +30,12 @@ class RestaurantList extends Component {
             this.props.restaurants.map((restaurant, index) => (
               <li key={index}>
                 <p className="restaurantName">
-                  {restaurant.theRestaurant}<br />
+                  {restaurant.the_restaurant}<br />
                 </p>
                 <p>
                   {/* let user edit or delete their restaurant items */}
                   {restaurant.type}<br />
-                  <button><Link to={{ pathname: `/edit/${restaurant.id}`, state: { restaurant, index } }}>Edit</Link></button> <button onClick={() => this.props.deleteRestaurant(restaurant.id)}>Delete</button>
+                  <button><Link to={{ pathname: `/edit/${restaurant.id}`, state: { restaurant, index } }}>Edit</Link></button> <button onClick={() => this.handleDelete(restaurant.id)}>Delete</button>
                 </p>
               </li>
             ))

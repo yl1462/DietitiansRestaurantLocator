@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-// import config from '../config';
+import config from '../config';
 import PropTypes from 'prop-types'
 
 class EditRestaurant extends Component {
   state = {
-    theRestaurant: '',
+    the_restaurant: '',
     type: '',
     id: '',
     index: ''
   }
 
   componentDidMount() {
-    const { theRestaurant, type, id } = this.props.location.state.restaurant
+    const { the_restaurant, type, id } = this.props.location.state.restaurant
     const { index } = this.props.location.state
     this.setState({
-      theRestaurant,
+      the_restaurant,
       type,
       id,
       index
@@ -29,33 +29,32 @@ class EditRestaurant extends Component {
 
   // update the selected restaurant, with the given id
   handleSubmit = (e) => {
+    e.preventDefault()
     const editedRestaurant = {
-      theRestaurant: this.state.theRestaurant,
+      the_restaurant: this.state.the_restaurant,
       type: this.state.type,
       id: this.state.id
   }
-    e.preventDefault()
-    this.props.editRestaurant(editedRestaurant, this.state.index)
-    this.props.history.push('/home')
-    // fetch(`${config.API_ENDPOINT}/api/restautant/${this.state.id}`, {
-    //     method:'PATCH',
-    //     headers:{
-    //         'Content-Type':'application/json'
-    //     },
-    //     body:JSON.stringify(editedRestaurant)
-    // })
-    // .then(() => {
-    //   console.log('edit')
-    //   this.props.editRestaurant(editedRestaurant, this.state.index)
-    //   this.props.history.push('/home')
-    // })
-    // .catch(err => {
-    //     this.setState({err})
-    // })
+    
+    fetch(`${config.API_ENDPOINT}/api/restaurant/${this.state.id}`, {
+        method:'PATCH',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify(editedRestaurant)
+    })
+    .then(() => {
+      console.log('edit')
+      this.props.editRestaurant(editedRestaurant, this.state.index)
+      this.props.history.push('/home')
+    })
+    .catch(err => {
+        this.setState({err})
+    })
 }
 
   render() {
-    const { theRestaurant, type } = this.state
+    const { the_restaurant, type } = this.state
 
     return (
       <>
@@ -64,12 +63,11 @@ class EditRestaurant extends Component {
           <form onSubmit={this.handleSubmit}>
             <input 
               type='text' 
-              value={theRestaurant}  
-              name='theRestaurant'
+              value={the_restaurant}  
+              name='the_restaurant'
               onChange={this.handleChange}
               className="Placeholder"
               required
-              // pattern="[A-Za-z0-9\~\!\@\#\$\%\^\*\(\)\_]{3}"
               min={3}
               /><br />
             <select required onChange={this.handleChange} name='type' value={type} >
@@ -89,7 +87,3 @@ class EditRestaurant extends Component {
 }
 
 export default EditRestaurant;
-
-EditRestaurant.propTypes = {
-  history: PropTypes.object.isRequired
-}

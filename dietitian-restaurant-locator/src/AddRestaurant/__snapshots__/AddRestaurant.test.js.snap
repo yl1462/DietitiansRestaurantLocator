@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddRestaurant component renders the new restaurant given props 1`] = `
+<Fragment>
+  <div
+    className="AddRestaurant"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        className="Placeholder"
+        name="the_restaurant"
+        onChange={[Function]}
+        pattern="[A-Za-z0-9\\\\~\\\\!\\\\@\\\\#\\\\$\\\\%\\\\^\\\\*\\\\(\\\\)\\\\_]{3}"
+        placeholder="Name of the Restaurant"
+        required={true}
+        the_restaurant="at least 3 characters required"
+        type="text"
+        value="McDonald"
+      />
+      <br />
+      <select
+        className="Placeholder"
+        name="type"
+        onChange={[Function]}
+        required={true}
+        type="selected"
+        value="keto"
+      >
+        <option
+          value=""
+        >
+          ---Type of Diet---
+        </option>
+        <option
+          value="Keto"
+        >
+          Keto
+        </option>
+        <option
+          value="Mediterranean"
+        >
+          Mediterranean
+        </option>
+        <option
+          value="Plant-based"
+        >
+          Plant-based
+        </option>
+      </select>
+      <br />
+      <button
+        className="AddRestaurant-button"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</Fragment>
+`;

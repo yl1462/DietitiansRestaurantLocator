@@ -21,7 +21,7 @@ describe('renders without crashing', () => {
 
 describe(`AddRestaurant component`, () => {
   const props = {
-    theRestaurant: 'McDonald',
+    the_restaurant: 'McDonald',
     type: 'keto'
   }
 

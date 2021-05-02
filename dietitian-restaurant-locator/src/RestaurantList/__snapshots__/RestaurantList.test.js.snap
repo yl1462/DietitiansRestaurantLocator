@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RestaurantList component renders a restaurant in ul for each restaurants in array 1`] = `
+<ul>
+  <li
+    key="0"
+  >
+    <p
+      className="restaurantName"
+    >
+      <br />
+    </p>
+    <p>
+      keto
+      <br />
+      <button>
+        <Link
+          to={
+            Object {
+              "pathname": "/edit/undefined",
+              "state": Object {
+                "index": 0,
+                "restaurant": Object {
+                  "name": "McDonald's",
+                  "type": "keto",
+                },
+              },
+            }
+          }
+        >
+          Edit
+        </Link>
+      </button>
+       
+      <button
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </p>
+  </li>
+  <li
+    key="1"
+  >
+    <p
+      className="restaurantName"
+    >
+      <br />
+    </p>
+    <p>
+      mediterranean
+      <br />
+      <button>
+        <Link
+          to={
+            Object {
+              "pathname": "/edit/undefined",
+              "state": Object {
+                "index": 1,
+                "restaurant": Object {
+                  "name": "Wendy's",
+                  "type": "mediterranean",
+                },
+              },
+            }
+          }
+        >
+          Edit
+        </Link>
+      </button>
+       
+      <button
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </p>
+  </li>
+  <li
+    key="2"
+  >
+    <p
+      className="restaurantName"
+    >
+      <br />
+    </p>
+    <p>
+      plant-based
+      <br />
+      <button>
+        <Link
+          to={
+            Object {
+              "pathname": "/edit/undefined",
+              "state": Object {
+                "index": 2,
+                "restaurant": Object {
+                  "name": "Five Guys",
+                  "type": "plant-based",
+                },
+              },
+            }
+          }
+        >
+          Edit
+        </Link>
+      </button>
+       
+      <button
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </p>
+  </li>
+</ul>
+`;

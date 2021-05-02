@@ -1,38 +1,103 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  text-decoration: none;
+  color: #5c0000
+}
+
+body {
+  background: radial-gradient(
+    #ffff3f 35%,
+    #007f5f 85%
+  );
+}
 .App {
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  min-height: 1300px;
+  background: linear-gradient(
+    90deg,
+    #80B918 0%,
+    #dddf00 15%,
+    #ffff3f 50%,
+    #dddf00 85%,
+    #80B918 100%
+  );
+  text-align: center;
+  margin: 10px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+h1 {
+  margin: 50px 0 0 0;
+  font-size: 37px;
+}
+
+.Home {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type:none;
+}
+
+ul li {
+  border-style: outset;
+  border-radius: 50%;
+  margin: 30px 9px;
+  padding: 25px;
+  background: radial-gradient(
+    #FFFF3F 35%,
+    #80B918 100%
+  );
+}
+
+.AddRestaurant {
+  margin: 32px;
+}
+
+.Placeholder {
+  height: 30px;
+  width: 300px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.restaurantName {
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  outline: none;
+  background: radial-gradient(
+    #FFFF3F 35%,
+    #80B918 100%
+  );
+  color: #5c0000;
+  text-transform: capitalize;
+  margin: 35px 20px 15px 20px;
+  text-decoration: none;
+  font-size: 25px
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+footer {
+  margin: 250px 35px 0 35px;
+  font-size: 35px
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.landingpage {
+  border-style: outset;
+  border-radius: 7px;
+  margin: 7px;
+  padding: 25px;
+  background-color: #DDDF00;
 }
